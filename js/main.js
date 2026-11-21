@@ -1,165 +1,68 @@
-// This function will set text inside the input field
-function setPlaceholderInsideInput() {
-  const inputElement = document.getElementById('input-ai');  // Select the input field
-  inputElement.placeholder = "Ask about me..."; // Set the placeholder text
-}
+/**
+ * Main JavaScript for Ali Cenk Baytop Portfolio
+ * Clean, lightweight, zero-dependency client logic
+ */
 
-// Call the function to set text
-setPlaceholderInsideInput();
+/**
+ * Feature: Auto-order Featured Projects to Top
+ * Dynamically ensures any project marked with data-featured="true" is placed
+ * at the top of the projects section before all others.
+ */
+function sortFeaturedProjects() {
+  const grid = document.getElementById("projects-grid");
+  if (!grid) return;
 
-// Function to toggle the chat popup visibility
-function toggleChatPopup() {
-  const chatPopup = document.getElementById("chat-popup");
-  if (chatPopup.style.display === "none" || chatPopup.style.display === "") {
-    chatPopup.style.display = "block";  // Show the popup
-  } else {
-    chatPopup.style.display = "none";  // Hide the popup
-  }
-}
+  const projects = Array.from(grid.querySelectorAll(".project-box"));
+  const featured = [];
+  const regular = [];
 
-// Function to close the chat popup
-function closeChatPopup() {
-  const chatPopup = document.getElementById("chat-popup");
-  chatPopup.style.display = "none";  // Hide the popup
-}
-
-// Function to check model connection
-async function checkModelConnection() {
-  try {
-    const response = await fetch("https://alicenkbaytop-github-io.onrender.com/check_connection", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    const data = await response.json();
-    return data.status === "connected";
-  } catch (error) {
-    console.error("Error checking model connection:", error);
-    return false;
-  }
-}
-
-// Function to search for a question
-async function searchQuestion() {
-  const questionInput = document.getElementById("input-ai");
-  const resultElement = document.getElementById("result");
-  const loadingElement = document.getElementById("loading");
-  const responseTimeElement = document.getElementById("response-time");
-
-  const question = questionInput.value.trim();
-
-  // Validate question length
-  if (question.split(" ").length > 20) {
-    resultElement.innerHTML = "Please limit your question to 20 words or less.";
-    return;
-  }
-
-  // Show loading state
-  loadingElement.style.display = "block";
-  resultElement.innerHTML = "";
-
-  // Check model connection first
-  const isModelConnected = await checkModelConnection();
-  if (!isModelConnected) {
-    resultElement.innerHTML = "The model connection could not be established. Please contact your system administrator.";
-    loadingElement.style.display = "none";
-    return;
-  }
-
-  try {
-    const response = await fetch("https://alicenkbaytop-github-io.onrender.com/get_answer", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ question: question }),
-    });
-
-    if (!response.ok) {
-      throw new Error("No network response.");
-    }
-
-    const data = await response.json();
-
-    if (data.answer) {
-      resultElement.innerHTML = data.answer;
-      responseTimeElement.innerHTML = `Response time: ${data.response_time}`;
+  projects.forEach((card) => {
+    if (card.getAttribute("data-featured") === "true") {
+      featured.push(card);
     } else {
-      resultElement.innerHTML = "There was an error receiving a reply. Please try again.";
+      regular.push(card);
     }
-  } catch (error) {
-    console.error("Error fetching response:", error);
-    resultElement.innerHTML = "The model is not responding. Please try again later.";
-  } finally {
-    loadingElement.style.display = "none";
-  }
+  });
+
+  // Prepend featured items before all regular items in the grid
+  [...featured, ...regular].forEach((card) => {
+    grid.appendChild(card);
+  });
 }
 
-// Event Listeners
+// Function to load external HTML partials (navbar & footer)
+function loadComponent(containerId, relativePath) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  fetch(relativePath)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`Failed to load ${relativePath}: ${response.statusText}`);
+      }
+      return response.text();
+    })
+    .then((html) => {
+      container.innerHTML = html;
+      // If we just loaded the footer, update the dynamic year
+      if (containerId === "footer") {
+        const yearSpan = document.getElementById("current-year");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+      }
+    })
+    .catch((err) => {
+      console.warn("Component fetch notice:", err);
+    });
+}
+
+// Initialize on DOM Ready
 document.addEventListener("DOMContentLoaded", () => {
-  // Chat toggle button
-  const chatBotButton = document.getElementById("chat-bot");
-  chatBotButton?.addEventListener("click", toggleChatPopup);
+  // Sort featured projects to the top
+  sortFeaturedProjects();
 
-  // Close button
-  const closeButton = document.querySelector(".close-btn-chatbot");
-  closeButton?.addEventListener("click", closeChatPopup);
-
-  // Input field
-  const inputField = document.getElementById("input-ai");
-  inputField?.addEventListener("keypress", (event) => {
-    if (event.key === "Enter") {
-      event.preventDefault();
-      searchQuestion();
-    }
-  });
-
-  // Initial connection check
-  checkModelConnection().then(isConnected => {
-    if (!isConnected) {
-      const resultElement = document.getElementById("result");
-      resultElement.innerHTML = "The model connection could not be established. Please contact your system administrator.";
-    }
-  });
-});
-
-// --Navbar--
-document.addEventListener('DOMContentLoaded', () => {
-  const navbarContainer = document.getElementById('navbar');
-  if (navbarContainer) {
-    fetch('../navbar.html')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch navbar: ${response.statusText}`);
-        }
-        return response.text();
-      })
-      .then((data) => {
-        navbarContainer.innerHTML = data;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
-});
-
-// --Footer--
-document.addEventListener('DOMContentLoaded', () => {
-  const navbarContainer = document.getElementById('footer');
-  if (navbarContainer) {
-    fetch('../footer.html')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`Failed to fetch navbar: ${response.statusText}`);
-        }
-        return response.text();
-      })
-      .then((data) => {
-        navbarContainer.innerHTML = data;
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }
+  // Load navbar and footer from root
+  loadComponent("navbar", "./navbar.html");
+  loadComponent("footer", "./footer.html");
 });

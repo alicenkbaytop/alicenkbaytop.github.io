@@ -4,8 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - ACB</title>
-  <!-- <link rel="icon" href="public/images/rubber-duck.png" type="image/png"> -->
+  <title>Ali Cenk Baytop | AI Engineer</title>
+  <link rel="icon" href="public/images/rubber-duck.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
@@ -13,112 +16,261 @@
 <body>
   <div id="navbar"></div>
 
-  <main>
+  <main class="main-content">
     <header class="hero">
-      <h2>Welcome to My Digital Space</h2>
-      <p>Data Scientist | Tech Explorer</p>
+      <div class="hero-badge">AI Engineer &amp; Tech Explorer</div>
+      <h1 class="hero-title">Ali Cenk Baytop</h1>
+      <p class="hero-subtitle">Building intelligent systems, LLM agents, and scalable machine learning workflows.</p>
     </header>
 
-    <section class="projects-grid">
-      <!-- Project Box Template -->
-       <a href="https://github.com/alicenkbaytop/NLP/tree/main/llm2sql" class="project-box">
-        <img src="public/images/chat2sql.png" alt="Project 10" />
-        <h3>Chat2SQL</h3>
-        <p>Streamlit, Ollama, oracledb, shapely, LLM, AI</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/NLP/tree/main/BoundaryFinder" class="project-box">
-        <img src="public/images/boundary_finder.png" alt="Project 9" />
-        <h3>Location Boundary Finder</h3>
-        <p>Streamlit, Folium, osmnx, geopandas, shapely</p>
-      </a>
-       <a href="https://github.com/alicenkbaytop/NLP/tree/main/chatgis" class="project-box">
-        <img src="public/images/chatgis.png" alt="Project 8" />
-        <h3>ChatGIS</h3>
-        <p>Streamlit, Ollama, Folium, osmnx, geopy, LLM, AI</p>
-      </a>
-      <a href="https://www.linkedin.com/posts/alicenkbaytop_ai-techtalk-innovation-activity-7333078542580117507-JhYQ?utm_source=li_share&utm_content=feedcontent&utm_medium=g_dt_web&utm_campaign=copy" class="project-box">
-        <img src="public/images/presentation2.JPG" alt="Presentation 2" />
-        <h3>AI and GenAI Talk</h3>
-        <p>Istanbul Metropolitan Municipality 2025, May</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/NLP/tree/main/doc2qa" class="project-box">
-        <img src="public/images/doc2qa.png" alt="Project 7" />
-        <h3>Doc2QA</h3>
-        <p>Streamlit, Tesseract OCR, Groq, LLM, AI</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/NLP/tree/main/travel-planner" class="project-box">
-        <img src="public/images/travel-planner.png" alt="Project 6" />
-        <h3>Istanbul Travel Planner</h3>
-        <p>Streamlit, Folium, Geopy, Groq, LLM, AI</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/NLP/tree/main/readme-generator" class="project-box">
-        <img src="public/images/README Generator.png" alt="Project 5" />
-        <h3>README.md Generator</h3>
-        <p>Firecrawl, DeepSeek, Ollama, LLM, AI</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/NLP/tree/main/Flowise" class="project-box">
-        <img src="public/images/Web Search, Writing, Coding, Strategy Agents.png" alt="Project 4" />
-        <h3>Agents on Flowise</h3>
-        <p>Agent, Groq, Open Source LLM, Cohere, Flowise, AI</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/NLP/tree/main/finance-analyst" class="project-box">
-        <img src="public/images/Finance Analyst.png" alt="Project 3" />
-        <h3>Finance Analyst</h3>
-        <p>Agent, Groq, Open Source LLM, Phi, Yahoo Finance</p>
-      </a>
-      <a href="https://www.linkedin.com/posts/alicenkbaytop_ai-ibbgisday2024-worldgisday-activity-7268164346092945408-sHlG?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFHnbEoBW6WAArOMVF9VEiZEQ4ZVG4QfVvk" class="project-box">
-        <img src="public/images/presentation1.jpg" alt="Presentation 1" />
-        <h3>AI and GenAI Talk</h3>
-        <p>Istanbul Metropolitan Municipality GIS Day 2024, November</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/NLP/tree/main/RAG" class="project-box">
-        <img src="public/images/rag.png" alt="Project 2" />
-        <h3>Q&A Assistant</h3>
-        <p>RAG, Groq, Open Source LLM, Embedding</p>
-      </a>
-      <a href="https://github.com/alicenkbaytop/computer-vision/tree/main/running_race_counter" class="project-box">
-        <img src="public/images/race.png" alt="Project 1" />
-        <h3>Runner Counter Tracking</h3>
-        <p>YOLO, OpenCV, Tracking</p>
-      </a>
-      <!-- Add more project boxes as needed -->
-    </section>
-  </main>
-
-  <div id="chat-bot">
-    <img src="public/images/duck.gif" alt="Chatbot" />
-  </div>
-
-  <div id="chat-popup">
-    <div class="popup-content-chatbot">
-      <span class="close-btn-chatbot" onclick="closePopupChatbot()">X</span>
-      <div id="ai-container">
-        <h1 id="header-ai">Duckie (Modern Resume)</h1>
-        <div id="random-word" class="word"></div>
-        <form onsubmit="event.preventDefault();">
-          <div class="input-container">
-            <input type="text" id="input-ai" name="input-ai" required onkeydown="handleKeyPress(event)" />
-            <button id="button-ai" type="submit" onclick="searchQuestion()">
-              Search
-            </button>
-          </div>
-        </form>
-        <div id="loading" style="display: none">
-          <div class="spinner"></div>
-          loading...
-        </div>
-        <div id="result"></div>
-        <div id="response-time"></div>
+    <section class="projects-section">
+      <div class="section-header">
+        <h2 class="section-title">Projects &amp; Technical Work</h2>
       </div>
 
-      <!-- Add more content here as needed -->
-    </div>
-  </div>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Project Card: TaskFlow (Featured / Pinned) -->
+        <article class="project-box" data-featured="true">
+          <div class="project-card-header">
+            <span class="project-badge"><i class="fas fa-thumbtack"></i> Featured</span>
+          </div>
+          <div class="project-image-wrap">
+            <img src="public/images/taskflow.png" alt="TaskFlow Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">TaskFlow</h3>
+            <p class="project-desc">Autonomous multi-agent task automation system powered by LangGraph, FastAPI, and Supabase pgvector with observability via Arize Phoenix.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">LangGraph</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Supabase</span>
+              <span class="tech-tag">pgvector</span>
+              <span class="tech-tag">Gemini</span>
+              <span class="tech-tag">Phoenix</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Streamlit</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/TaskFlow" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: Chat2SQL -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/chat2sql.png" alt="Chat2SQL Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Chat2SQL</h3>
+            <p class="project-desc">Natural language to SQL interface for enterprise databases enabling geospatial querying and automated query synthesis.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Ollama</span>
+              <span class="tech-tag">OracleDB</span>
+              <span class="tech-tag">Shapely</span>
+              <span class="tech-tag">LLM</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/NLP/tree/main/llm2sql" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: ChatGIS -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/chatgis.png" alt="ChatGIS Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">ChatGIS</h3>
+            <p class="project-desc">Conversational GIS assistant capable of geocoding, spatial queries, and interactive map visualizations from natural language.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Ollama</span>
+              <span class="tech-tag">Folium</span>
+              <span class="tech-tag">OSMnx</span>
+              <span class="tech-tag">Geopy</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/NLP/tree/main/chatgis" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: AI and GenAI Talk (IMM 2025) -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/presentation2.JPG" alt="AI and GenAI Talk May 2025" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI &amp; GenAI Keynote</h3>
+            <p class="project-desc">Tech keynote at Istanbul Metropolitan Municipality on modern Generative AI architectures, agent workflows, and practical applications (May 2025).</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Tech Talk</span>
+              <span class="tech-tag">Generative AI</span>
+              <span class="tech-tag">IMM</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://www.linkedin.com/posts/alicenkbaytop_ai-techtalk-innovation-activity-7333078542580117507-JhYQ?utm_source=li_share&amp;utm_content=feedcontent&amp;utm_medium=g_dt_web&amp;utm_campaign=copy" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Post</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: Doc2QA -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/doc2qa.png" alt="Doc2QA Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Doc2QA</h3>
+            <p class="project-desc">Document ingestion and question answering system using OCR and LLM reasoning to extract structured insights from scanned papers.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Streamlit</span>
+              <span class="tech-tag">Tesseract OCR</span>
+              <span class="tech-tag">Groq</span>
+              <span class="tech-tag">LLM</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/NLP/tree/main/doc2qa" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: Agents on Flowise -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/Web Search, Writing, Coding, Strategy Agents.png" alt="Agents on Flowise Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Agents on Flowise</h3>
+            <p class="project-desc">Autonomous multi-agent orchestration architecture for research, synthesis, writing, and code assistance using open LLMs.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Flowise</span>
+              <span class="tech-tag">Multi-Agent</span>
+              <span class="tech-tag">Groq</span>
+              <span class="tech-tag">Cohere</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/NLP/tree/main/Flowise" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: Finance Analyst -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/Finance Analyst.png" alt="Finance Analyst Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Finance Analyst Agent</h3>
+            <p class="project-desc">Autonomous financial research agent tracking stock fundamentals, analyst consensus, and market metrics via real-time data feeds.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">AI Agent</span>
+              <span class="tech-tag">Phi-3</span>
+              <span class="tech-tag">Yahoo Finance</span>
+              <span class="tech-tag">Groq</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/NLP/tree/main/finance-analyst" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: AI & GIS Day Presentation (IMM 2024) -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/presentation1.jpg" alt="AI & GIS Day Talk November 2024" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AI &amp; GIS Day Presentation</h3>
+            <p class="project-desc">Keynote presentation at Istanbul Metropolitan Municipality GIS Day 2024 covering AI and spatial analytics integration (November 2024).</p>
+            <div class="tech-tags">
+              <span class="tech-tag">GIS Day</span>
+              <span class="tech-tag">GeoAI</span>
+              <span class="tech-tag">IMM</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://www.linkedin.com/posts/alicenkbaytop_ai-ibbgisday2024-worldgisday-activity-7268164346092945408-sHlG?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAFHnbEoBW6WAArOMVF9VEiZEQ4ZVG4QfVvk" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Post</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: Q&A Assistant -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/rag.png" alt="RAG Q&A Assistant Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">RAG Q&amp;A Assistant</h3>
+            <p class="project-desc">Retrieval-augmented question answering pipeline built with vector embeddings and open-source LLMs for contextual knowledge retrieval.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">Groq</span>
+              <span class="tech-tag">Embeddings</span>
+              <span class="tech-tag">Vector DB</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/NLP/tree/main/RAG" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card: Runner Counter Tracking -->
+        <article class="project-box">
+          <div class="project-image-wrap">
+            <img src="public/images/race.png" alt="Runner Counter Tracking Preview" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Runner Counter Tracking</h3>
+            <p class="project-desc">Computer vision pipeline tracking and counting marathon runners across designated timing lines with persistent IDs.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">YOLO</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Object Tracking</span>
+            </div>
+            <div class="project-footer">
+              <a href="https://github.com/alicenkbaytop/computer-vision/tree/main/running_race_counter" class="project-link" target="_blank" rel="noopener noreferrer">
+                <span>View Source</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
 
   <div id="footer"></div>
 
   <script src="js/main.js"></script>
-
   <!-- 100% privacy-first analytics -->
   <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
